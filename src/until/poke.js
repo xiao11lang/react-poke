@@ -1,0 +1,129 @@
+export  const pokes=[{
+    weight:1,
+    points:5,
+    order:1
+},{
+    weight:1,
+    points:5,
+    order:2
+},{
+    weight:1,
+    points:7,
+    order:1
+},{
+    weight:1,
+    points:7,
+    order:2
+},{
+    weight:1,
+    points:8,
+    order:1
+},{
+    weight:1,
+    points:8,
+    order:2
+},{
+    weight:1,
+    points:9,
+    order:1
+},{
+    weight:1,
+    points:9,
+    order:2
+},{
+    weight:2,
+    points:0,
+    order:1
+},{
+    weight:2,
+    points:0,
+    order:2
+},{
+    weight:2,
+    points:1,
+    order:1
+},{
+    weight:2,
+    points:1,
+    order:2
+},{
+    weight:2,
+    points:6,
+    order:1
+},{
+    weight:2,
+    points:6,
+    order:2
+},{
+    weight:2,
+    points:7,
+    order:1
+},{
+    weight:2,
+    points:7,
+    order:2
+},{
+    weight:3,
+    points:0,
+    order:1
+},{
+    weight:3,
+    points:0,
+    order:2
+},{
+    weight:3,
+    points:4,
+    order:1
+},{
+    weight:3,
+    points:4,
+    order:2
+},{
+    weight:3,
+    points:6,
+    order:1
+},{
+    weight:3,
+    points:6,
+    order:2
+},{
+    weight:4,
+    points:4,
+    order:1
+},{
+    weight:4,
+    points:4,
+    order:2
+},{
+    weight:5,
+    points:8,
+    order:1
+},{
+    weight:5,
+    points:8,
+    order:2
+},{
+    weight:6,
+    points:2,
+    order:1
+},{
+    weight:6,
+    points:2,
+    order:2
+},{
+    weight:7,
+    points:2,
+    order:1
+},{
+    weight:7,
+    points:2,
+    order:2
+},{
+    weight:8,
+    points:6,
+    order:1
+},{
+    weight:8,
+    points:3,
+    order:2
+}]
