@@ -3,3 +3,32 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.player{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+.player:nth-of-type(1){
+  top: 0;
+  left: 0;
+  background-color: red
+}
+.player:nth-of-type(2){
+  top: 0;
+  left: 200px;
+  background-color: green
+}
+.player:nth-of-type(3){
+  top: 200px;
+  left: 0;
+  background-color: yellow
+}
+.player:nth-of-type(4){
+  top: 200px;
+  left:200px;
+  background-color: blue
+}
+button{
+  position: absolute;
+  top: 400px;
+}
