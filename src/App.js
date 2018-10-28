@@ -14,7 +14,7 @@ class App extends Component {
   deal(){
     let that=this;
     let index=0;
-    let currentRoundPoke=this.props.pokeHeap.slice(0,8)
+    let currentRoundPoke=this.props.pokeHeap.slice((this.props.round-1)*8,this.props.round*8)
     console.log(this.props.pokeHeap)
     this.time=setInterval(function(){
       if(index>7){
@@ -29,6 +29,15 @@ class App extends Component {
       
     },1000)
   }
+  newRound(){
+    let round=this.props.round;
+    if(this.props.round===4){
+      round=1;
+    }else{
+      round++
+    }
+    this.props.newRound(round)
+  }
   componentDidMount (){
     //this.props.init(pokes)
     this.props.shuffle(shuffle(pokes))
@@ -38,7 +47,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <button onClick={()=>this.deal()}>start</button>
+        <button onClick={()=>this.deal()} id='start'>start</button>
+        <button onClick={()=>this.newRound()} id='new'>new</button>
         <Player pokes={this.props.currentRoundPoke[0]}></Player>
         <Player pokes={this.props.currentRoundPoke[1]}></Player>
         <Player pokes={this.props.currentRoundPoke[2]}></Player>
@@ -50,7 +60,8 @@ class App extends Component {
 function select(state){
   return {
     pokeHeap:state.pokeHeap,
-    currentRoundPoke:state.currentRoundPoke
+    currentRoundPoke:state.currentRoundPoke,
+    round:state.round
   }
 }
 export default connect(select,actions)(App)

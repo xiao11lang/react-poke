@@ -18,3 +18,9 @@ export function deal({index,poke}){
         poke
     }
 }
+export function newRound(round){
+    return {
+        type:Actions.NEWROUND,
+        round
+    }
+}

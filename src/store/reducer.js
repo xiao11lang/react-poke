@@ -26,8 +26,18 @@ function currentRoundPoke(state=[[],[],[],[]],action){
                 return poke
             }
         })
+    }else if(action.type===Actions.NEWROUND){
+        return [[],[],[],[]]
+    }
+    else{
+        return state
+    }
+}
+function round(state=1,action){
+    if(action.type===Actions.NEWROUND){
+        return action.round
     }else{
         return state
     }
 }
-export default combineReducers({pokeHeap,currentIndex,currentRoundPoke})
+export default combineReducers({pokeHeap,currentIndex,currentRoundPoke,round})

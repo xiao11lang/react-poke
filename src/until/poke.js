@@ -1,129 +1,161 @@
 export  const pokes=[{
     weight:1,
     points:5,
-    order:1
+    order:1,
+    activeIndex:0
 },{
     weight:1,
     points:5,
-    order:2
+    order:2,
+    activeIndex:1
 },{
     weight:1,
     points:7,
-    order:1
+    order:1,
+    activeIndex:2
 },{
     weight:1,
     points:7,
-    order:2
+    order:2,
+    activeIndex:3
 },{
     weight:1,
     points:8,
-    order:1
+    order:1,
+    activeIndex:4
 },{
     weight:1,
     points:8,
-    order:2
+    order:2,
+    activeIndex:5
 },{
     weight:1,
     points:9,
-    order:1
+    order:1,
+    activeIndex:6
 },{
     weight:1,
     points:9,
-    order:2
+    order:2,
+    activeIndex:7
 },{
     weight:2,
     points:0,
-    order:1
+    order:1,
+    activeIndex:8
 },{
     weight:2,
     points:0,
-    order:2
+    order:2,
+    activeIndex:9
 },{
     weight:2,
     points:1,
-    order:1
+    order:1,
+    activeIndex:10
 },{
     weight:2,
     points:1,
-    order:2
+    order:2,
+    activeIndex:11
 },{
     weight:2,
     points:6,
-    order:1
+    order:1,
+    activeIndex:12
 },{
     weight:2,
     points:6,
-    order:2
+    order:2,
+    activeIndex:13
 },{
     weight:2,
     points:7,
-    order:1
+    order:1,
+    activeIndex:14
 },{
     weight:2,
     points:7,
-    order:2
+    order:2,
+    activeIndex:15
 },{
     weight:3,
     points:0,
-    order:1
+    order:1,
+    activeIndex:16
 },{
     weight:3,
     points:0,
-    order:2
+    order:2,
+    activeIndex:17
 },{
     weight:3,
     points:4,
-    order:1
+    order:1,
+    activeIndex:18
 },{
     weight:3,
     points:4,
-    order:2
+    order:2,
+    activeIndex:19
 },{
     weight:3,
     points:6,
-    order:1
+    order:1,
+    activeIndex:20
 },{
     weight:3,
     points:6,
-    order:2
+    order:2,
+    activeIndex:21
 },{
     weight:4,
     points:4,
-    order:1
+    order:1,
+    activeIndex:22
 },{
     weight:4,
     points:4,
-    order:2
+    order:2,
+    activeIndex:23
 },{
     weight:5,
     points:8,
-    order:1
+    order:1,
+    activeIndex:24
 },{
     weight:5,
     points:8,
-    order:2
+    order:2,
+    activeIndex:25
 },{
     weight:6,
     points:2,
-    order:1
+    order:1,
+    activeIndex:26
 },{
     weight:6,
     points:2,
-    order:2
+    order:2,
+    activeIndex:27
 },{
     weight:7,
     points:2,
-    order:1
+    order:1,
+    activeIndex:28
 },{
     weight:7,
     points:2,
-    order:2
+    order:2,
+    activeIndex:29
 },{
     weight:8,
     points:6,
-    order:1
+    order:1,
+    activeIndex:30
 },{
     weight:8,
     points:3,
-    order:2
+    order:2,
+    activeIndex:31
 }]
