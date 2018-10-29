@@ -24,3 +24,9 @@ export function newRound(round){
         round
     }
 }
+export function dice(diceNumber){
+    return {
+        type:Actions.DICE,
+        diceNumber
+    }
+}

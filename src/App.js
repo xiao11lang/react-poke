@@ -38,6 +38,9 @@ class App extends Component {
     }
     this.props.newRound(round)
   }
+  dice(){
+    this.props.dice(3+Math.round(9*Math.random()))
+  }
   componentDidMount (){
     //this.props.init(pokes)
     this.props.shuffle(shuffle(pokes))
@@ -45,14 +48,15 @@ class App extends Component {
   }
   
   render() {
+    let players=this.props.dealIndex.map((playIndex,index)=>{
+      return <Player key={index} pokes={this.props.currentRoundPoke[playIndex]}></Player>
+    })
     return (
       <div>
         <button onClick={()=>this.deal()} id='start'>start</button>
         <button onClick={()=>this.newRound()} id='new'>new</button>
-        <Player pokes={this.props.currentRoundPoke[0]}></Player>
-        <Player pokes={this.props.currentRoundPoke[1]}></Player>
-        <Player pokes={this.props.currentRoundPoke[2]}></Player>
-        <Player pokes={this.props.currentRoundPoke[3]}></Player>
+        <button onClick={()=>this.dice()} id='dice'>dice</button>
+        {players}
       </div>
     )
   }
@@ -61,7 +65,9 @@ function select(state){
   return {
     pokeHeap:state.pokeHeap,
     currentRoundPoke:state.currentRoundPoke,
-    round:state.round
+    round:state.round,
+    diceNumber:state.diceNumber,
+    dealIndex:state.dealIndex
   }
 }
 export default connect(select,actions)(App)
