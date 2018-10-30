@@ -33,7 +33,7 @@ import p_832 from '../imgs/8_3_2.jpg'
 import p_861 from '../imgs/8_6_1.jpg'
 let imgs=[p_151,p_152,p_171,p_172,p_181,p_182,p_191,p_192,p_201,p_202,p_211,p_212,
 p_261,p_262,p_271,p_272,p_301,p_302,p_341,p_342,p_361,p_362,p_441,p_442,p_581,p_582,
-p_621,p_682,p_721,p_722,p_832,p_861];
+p_621,p_682,p_721,p_722,p_861,p_832];
 
 export default class Poke extends Component {
     constructor(props){

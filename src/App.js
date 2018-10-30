@@ -8,17 +8,21 @@ class App extends Component {
   constructor(){
     super()
     this.state={
-      index:0
+      newRound:true
     }
   }
   deal(){
     let that=this;
     let index=0;
     let currentRoundPoke=this.props.pokeHeap.slice((this.props.round-1)*8,this.props.round*8)
-    console.log(this.props.pokeHeap)
     this.time=setInterval(function(){
       if(index>7){
-        clearInterval(that.time)
+        clearInterval(that.time);
+        that.setState(()=>{
+          return {
+            newRound:false
+          }
+        })
       }else{
         that.props.deal({
           index:index%4,
@@ -33,17 +37,35 @@ class App extends Component {
     let round=this.props.round;
     if(this.props.round===4){
       round=1;
+      this.props.shuffle(shuffle(pokes.slice(0)))
     }else{
-      round++
+      round++;
     }
-    this.props.newRound(round)
+    this.props.newRound(round);
+    this.setState(()=>{
+      return {
+        newRound:true
+      }
+    })
   }
   dice(){
-    this.props.dice(3+Math.round(9*Math.random()))
+    let count=0;
+    let that=this;
+    //this.newRound()
+    //this.props.dice(3+Math.round(9*Math.random()))
+    this.timer=setInterval(function(){
+      if(count===10){
+        clearInterval(that.timer);
+        that.deal()
+      }else{
+        that.props.dice(3+Math.round(9*Math.random()));
+        count++
+      }
+    },100)
   }
   componentDidMount (){
     //this.props.init(pokes)
-    this.props.shuffle(shuffle(pokes))
+    this.props.shuffle(shuffle(pokes.slice(0)))
     
   }
   
@@ -53,9 +75,9 @@ class App extends Component {
     })
     return (
       <div>
-        <button onClick={()=>this.deal()} id='start'>start</button>
-        <button onClick={()=>this.newRound()} id='new'>new</button>
-        <button onClick={()=>this.dice()} id='dice'>dice</button>
+        {this.state.newRound?<button onClick={()=>this.dice()} id='dice'>dice</button>:null}
+        {!this.state.newRound?<button onClick={()=>this.newRound()} id='new'>newRound</button>:null}
+        <p>{this.props.diceNumber}</p>
         {players}
       </div>
     )
