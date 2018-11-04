@@ -21,7 +21,7 @@ function currentRoundPoke(state=[[],[],[],[]],action){
     if(action.type===Actions.DEAL){
         return state.map((poke,index)=>{
             if(index===action.index){
-                return [action.poke,...poke]
+                return [...poke,action.poke]
             }else{
                 return poke
             }

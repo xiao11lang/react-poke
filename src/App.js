@@ -4,11 +4,13 @@ import {connect} from 'react-redux'
 import * as actions from './store/action'
 import {pokes} from './until/poke'
 import {shuffle} from './until/shuffle'
+import './App.css'
 class App extends Component {
   constructor(){
     super()
     this.state={
-      newRound:true
+      newRound:true,
+      dealing:false
     }
   }
   deal(){
@@ -20,7 +22,7 @@ class App extends Component {
         clearInterval(that.time);
         that.setState(()=>{
           return {
-            newRound:false
+            newRound:false,
           }
         })
       }else{
@@ -44,7 +46,8 @@ class App extends Component {
     this.props.newRound(round);
     this.setState(()=>{
       return {
-        newRound:true
+        newRound:true,
+        dealing:false
       }
     })
   }
@@ -53,6 +56,9 @@ class App extends Component {
     let that=this;
     //this.newRound()
     //this.props.dice(3+Math.round(9*Math.random()))
+    this.setState({
+      dealing:true
+    })
     this.timer=setInterval(function(){
       if(count===10){
         clearInterval(that.timer);
@@ -75,8 +81,8 @@ class App extends Component {
     })
     return (
       <div>
-        {this.state.newRound?<button onClick={()=>this.dice()} id='dice'>dice</button>:null}
-        {!this.state.newRound?<button onClick={()=>this.newRound()} id='new'>newRound</button>:null}
+        {this.state.newRound&&!this.state.dealing?<button onClick={()=>this.dice()} id='dice'>掷骰子</button>:null}
+        {!this.state.newRound?<button onClick={()=>this.newRound()} id='new'>下一轮</button>:null}
         <p>{this.props.diceNumber}</p>
         {players}
       </div>
