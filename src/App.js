@@ -23,6 +23,7 @@ class App extends Component {
         that.setState(()=>{
           return {
             newRound:false,
+            dealing:false
           }
         })
       }else{
@@ -77,7 +78,7 @@ class App extends Component {
   
   render() {
     let players=this.props.dealIndex.map((playIndex,index)=>{
-      return <Player key={index} pokes={this.props.currentRoundPoke[playIndex]}></Player>
+      return <Player key={index} pokes={this.props.currentRoundPoke[playIndex]} dealing={this.state.dealing}></Player>
     })
     return (
       <div>
