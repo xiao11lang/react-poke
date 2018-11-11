@@ -6,7 +6,6 @@ export function init(pokes){
     }
 }
 export function shuffle(pokes){
-    console.log(pokes.map((p)=>p.points))
     return {
         type:Actions.SHUFFLE,
         pokes

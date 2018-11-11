@@ -36,14 +36,11 @@ p_261,p_262,p_271,p_272,p_301,p_302,p_341,p_342,p_361,p_362,p_441,p_442,p_581,p_
 p_621,p_682,p_721,p_722,p_861,p_832];
 
 export default class Poke extends Component {
-    constructor(props){
-        super(props)
-
-    }
+    
   render() {
     let pics=[];
     for(let i=0;i<32;i++){
-      pics.push(<img key={i} src={imgs[i]} style={{display:this.props.activeIndex==i?'block':'none'}}/>)
+      pics.push(<img alt='none' key={i} src={imgs[i]} style={{display:this.props.activeIndex===i?'block':'none'}}/>)
     }
     return (
       <div className='pokeCon'>

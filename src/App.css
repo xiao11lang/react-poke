@@ -20,6 +20,21 @@ body{
   height: 640px;
   background-image: url('./imgs/desk.jpg');
 }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.player{
+  position: absolute;
+  display: flex;
+}
+p{
+  position: absolute;
+  top: 200px;
+  left: 400px
+}
+
 #root img{
   width: 52px;
   height: 75px;
@@ -66,4 +81,25 @@ p{
   left: calc(50% - 6px);
   font-size: 20px;
   color: white
+}
+.result1,.result2,.result3{
+  color: white;
+  font-weight: bold
+}
+.result1{
+  position: absolute;
+  top: 94px;
+  left: 52px;
+  transform: rotate(-90deg)
+}
+.result2{
+  position: absolute;
+  top: 84px;
+  left: 54px
+}
+.result3{
+  position: absolute;
+  top: -45px;
+  left: 50px;
+  transform: rotate(-90deg)
 }

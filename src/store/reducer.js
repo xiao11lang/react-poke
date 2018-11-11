@@ -18,9 +18,11 @@ function currentIndex(state=0,action){
     }
 }//
 function currentRoundPoke(state=[[],[],[],[]],action){
+    //初始值为空，每次发牌添加一张
     if(action.type===Actions.DEAL){
         return state.map((poke,index)=>{
             if(index===action.index){
+                //为当前索引的玩家发一张
                 return [...poke,action.poke]
             }else{
                 return poke
@@ -41,6 +43,7 @@ function round(state=1,action){
     }
 }//当前轮数，共四轮
 function dealIndex(state=[0,1,2,3],action){
+    //确定每个玩家拿到的牌在四组牌中的序号
     if(action.type===Actions.DICE){
         switch(action.diceNumber%4){
             case 0:
@@ -51,6 +54,8 @@ function dealIndex(state=[0,1,2,3],action){
             return [3,0,1,2];
             case 3:
             return [2,3,0,1];
+            default:
+            return [0,1,2,3]
         }
     }else{
         return state

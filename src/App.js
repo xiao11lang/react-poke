@@ -9,14 +9,14 @@ class App extends Component {
   constructor(){
     super()
     this.state={
-      newRound:true,
-      dealing:false
+      newRound:true,//新一局
+      dealing:false//是否正在发牌
     }
   }
   deal(){
     let that=this;
     let index=0;
-    let currentRoundPoke=this.props.pokeHeap.slice((this.props.round-1)*8,this.props.round*8)
+    let currentRoundPoke=this.props.pokeHeap.slice((this.props.round-1)*8,this.props.round*8)//本回合的8张牌
     this.time=setInterval(function(){
       if(index>7){
         clearInterval(that.time);
@@ -35,12 +35,12 @@ class App extends Component {
       }
       
     },1000)
-  }
+  }//发牌
   newRound(){
     let round=this.props.round;
     if(this.props.round===4){
       round=1;
-      this.props.shuffle(shuffle(pokes.slice(0)))
+      this.props.shuffle(shuffle(pokes.slice(0)))//四轮发牌结束下一局
     }else{
       round++;
     }
@@ -69,7 +69,7 @@ class App extends Component {
         count++
       }
     },100)
-  }
+  }//随机掷骰子
   componentDidMount (){
     //this.props.init(pokes)
     this.props.shuffle(shuffle(pokes.slice(0)))
@@ -78,7 +78,7 @@ class App extends Component {
   
   render() {
     let players=this.props.dealIndex.map((playIndex,index)=>{
-      return <Player key={index} pokes={this.props.currentRoundPoke[playIndex]} dealing={this.state.dealing}></Player>
+      return <Player key={index} pokes={this.props.currentRoundPoke[playIndex]} dealing={this.state.dealing} index={index}></Player>
     })
     return (
       <div>
