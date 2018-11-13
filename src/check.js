@@ -83,9 +83,9 @@ function check(poke1, poke2) {
         } else {
             //都不是，比较点数
             //点数为10倍数先排除Q8 28的情况
-            if (pointsEqualZero(poke1) && pointsEqualZero(poke1)) {
+            if (pointsEqualZero(poke1) && pointsEqualZero(poke2)) {
                 /*处理点数和为10整数倍*/
-                if(getZeroWeight(poke1)>=getZeroWeight(poke2)){
+                if(getZeroWeight(poke1).weight>=getZeroWeight(poke2).weight){
                     return {
                         win:false
                     }//庄家权重大
@@ -94,8 +94,8 @@ function check(poke1, poke2) {
                         win:true
                     }
                 }
-            } else if (pointsEqualZero(poke1) && !pointsEqualZero(poke1)) {
-                if(getZeroWeight(poke1)===1){
+            } else if (pointsEqualZero(poke1) && !pointsEqualZero(poke2)) {
+                if(getZeroWeight(poke1).weight===1){
                     return {
                         win:true
                     }//庄家为最小点数
@@ -105,8 +105,8 @@ function check(poke1, poke2) {
                     }//庄家为天杠或地杠
                 }
                 
-            } else if (!pointsEqualZero(poke1) && pointsEqualZero(poke1)) {
-                if(getZeroWeight(poke2)===1){
+            } else if (!pointsEqualZero(poke1) && pointsEqualZero(poke2)) {
+                if(getZeroWeight(poke2).weight===1){
                     return {
                         win:false
                     }//闲家为最小牌
@@ -124,7 +124,7 @@ function check(poke1, poke2) {
                     }//庄家点数和大
                 }else if(getPointsSum(poke1)===getPointsSum(poke2)){
                     /*处理点数和一样*/
-                    if(getWeightSum(poke1>=getWeightSum(poke2))){
+                    if(getWeightSum(poke1)>=getWeightSum(poke2)){
                         return {
                             win:false
                         }//庄家权重和较大
@@ -143,4 +143,5 @@ function check(poke1, poke2) {
     }
 
 }
+
 export default check
