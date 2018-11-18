@@ -10,9 +10,9 @@ class Player extends Component {
       let poke1=this.props.currentRoundPoke[this.props.dealIndex[0]];
       let poke2=this.props.pokes
       if(check(poke1,poke2).win){
-        result='赢'
+        result='胜'
       }else{
-        result='输'
+        result='负'
       }
     }
     let pokes=this.props.pokes.map((poke,index)=>{
